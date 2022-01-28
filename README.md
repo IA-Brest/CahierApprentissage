@@ -33,3 +33,9 @@ Utiliser Jupyter Notebook et le Markdown pour rédiger des cahiers d'apprentissa
   - [14 - Exercice : tri de mots](./01-revisions.md#14--exercice--tri-de-mots)
   - [15 - Introduction aux tests unitaires : l'instruction `assert`](./01-revisions.md#15--introduction-aux-tests-unitaires--l-instruction--assert-)
   - [16 - Exercice : assert avec le palindrome](./01-revisions.md#16--exercice--assert-avec-le-palindrome)
+- [[./02-tp_dictionnaires.md]] [[02-tp_dictionnaires.ipynb]] [[02-tp_dictionnaires_corr.ipynb]]
+  - [TP : Magasin en ligne](./02-tp_dictionnaires.md#tp--magasin-en-ligne)
+  - [TP : recettes de cuisine](./02-tp_dictionnaires.md#tp--recettes-de-cuisine)
+   - [Présentation des sets](./02-tp_dictionnaires.md#présentation-des-sets)
+  - [TP : Gestion de bibliothèque](./02-tp_dictionnaires.md#tp--gestion-de-bibliothèque)
+
