@@ -39,3 +39,6 @@ Utiliser Jupyter Notebook et le Markdown pour rédiger des cahiers d'apprentissa
    - [Présentation des sets](./Python/02-tp_dictionnaires.md#présentation-des-sets)
   - [TP : Gestion de bibliothèque](./Python/02-tp_dictionnaires.md#tp--gestion-de-bibliothèque)
 
+## Python : Datascience
+
+- [[Python/Regression_Logistic.md]] [[Python/Regression_Logistic.ipynb]]
