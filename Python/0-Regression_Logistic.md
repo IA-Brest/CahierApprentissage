@@ -59,7 +59,7 @@ df.columns
 ### Supprimer la colonne 'RISK_MM' du jeu de données
 
 ```python
-df.drop(columns=['RISK_MM'], inplace=True)
+df.drop(columns=['RISK_MM'], axis=1, inplace=True)
 ```
 
 ### Vérifier si la colonne est supprimée
@@ -72,6 +72,7 @@ assert 'RISK_MM' not in df.columns
 
 ```python
 df.describe()
+df.info()
 ```
 
 ### Afficher la liste des noms des variables qualitatives 
@@ -79,6 +80,7 @@ df.describe()
 ```python
 qual = [col for col in df.columns if col not in df.describe().columns]
 # df.select_dtypes(include=object, exclude=None).columns
+
 qual
 ```
 

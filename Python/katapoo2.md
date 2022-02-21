@@ -70,7 +70,7 @@ class Film:
     self._titre = titre
     self._genre = genre
 
-  def __rep__(self):
+  def __str__(self):
     return(f"{self._titre} ({self._genre})")
     
 film_culte = Film(titre="La Cité de la Peur", genre="Comédie")
@@ -152,7 +152,7 @@ class Film:
     self._acteurs.append(acteur)
 
   def __str__(self):
-    acteurs = ', '.join(str(acteur) for acteur in self._acteurs)
+    d
     return(f"{self._titre} ({self._genre}) : {acteurs}")
     
 film_culte = Film(titre="La Cité de la Peur", genre="Comédie", acteurs=acteurs)

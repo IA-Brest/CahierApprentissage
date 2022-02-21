@@ -39,6 +39,26 @@ Utiliser Jupyter Notebook et le Markdown pour rédiger des cahiers d'apprentissa
    - [Présentation des sets](./Python/02-tp_dictionnaires.md#présentation-des-sets)
   - [TP : Gestion de bibliothèque](./Python/02-tp_dictionnaires.md#tp--gestion-de-bibliothèque)
 
+
+## Python : Bibliothèques
+
+- [[Python/Numpy-00-Exercices.ipynb]]
+- [[Python/Veille-Scikit_Learn.ipynb]]
+
 ## Python : Datascience
 
+- [[Python/Annalyse_des_Donnees-Statistiques-Corr.ipynb]]
+- [[Python/Regression_lineaire_multiple_polynomiale_Corr.ipynb]]
 - [[Python/Regression_Logistic.md]] [[Python/Regression_Logistic.ipynb]]
+
+## Python : Frameworks
+
+- [[Python/tkinter.ipynb]]
+- [[Python/Flask.ipynb]]
+
+
+## Python : Programation Objet
+
+- [[Python/Python-POO.md]]
+- [[Python/katapoo2.ipynb]]
+- [[Python/kataheritage.ipynb]]
