@@ -313,13 +313,13 @@ def pred(D, Y, k) -> pd.core.series.Series:
 train_set = df_clean.iloc[:-1, :-2]
 # print(train_set.sample(5, random_state=0))
 
-label_set = df_clean.iloc[:-1,-1:]
+label_set = df_clean.iloc[:-1, -1:]
 # print(label_set.sample(5, random_state=0))
 
 test_set = df_clean.iloc[-1:, :-2]
 # print(test_set)
 
-validation_set =  df_clean.iloc[-1:,-1:]
+validation_set = df_clean.iloc[-1:, -1:]
 # print(validation_set)
 
 d_test = knn_search(test_set, train_set)
@@ -444,7 +444,7 @@ assert 0.0 == accuracy(pd.DataFrame([("A", "B"), ("B", "C"), ("A", "C")]))
 # Calcul des performances
 
 perf_euclidean = pd.DataFrame({'k': pd.Series(dtype='int'),
-                                       'Accuracy': pd.Series(dtype='float')})
+                               'Accuracy': pd.Series(dtype='float')})
 
 for k in range(1, 20):
     predictions = KNN(test_set, train_set, label_set, k)
@@ -461,7 +461,7 @@ targets.Interpretation.value_counts()
 
 # %%
 perf_manhattan = pd.DataFrame({'k': pd.Series(dtype='int'),
-                                       'Accuracy': pd.Series(dtype='float')})
+                               'Accuracy': pd.Series(dtype='float')})
 
 for k in range(1, 20):
     predictions = KNN(test_set, train_set, label_set, k, metric='Manhattan')
@@ -476,7 +476,7 @@ plt_manhattan = perf_manhattan.plot(kind='line', x='k', y='Accuracy')
 
 # %%
 perf_minkowski = pd.DataFrame({'k': pd.Series(dtype='int'),
-                                       'Accuracy': pd.Series(dtype='float')})
+                               'Accuracy': pd.Series(dtype='float')})
 
 for k in range(1, 20):
     predictions = KNN(test_set, train_set, label_set, k, metric="Minkowski", p=5)
@@ -510,7 +510,7 @@ ax = perf_euclidean.plot(kind='line', x='k', y='Accuracy', label="Euclidean", ma
 perf_manhattan.plot(kind='line', x='k', y='Accuracy', label="Manhatann", marker='o', ax=ax)
 perf_minkowski.plot(kind='line', x='k', y='Accuracy', label="Minkowsky", marker='o', ax=ax)
 ax.axvline(k_ideal, label="k idéal", color='k', linestyle='--')
-ax.text(k_ideal+0.5,0.9,'k idéal', transform=ax.get_xaxis_text1_transform(0)[0])
+ax.text(k_ideal+0.5, 0.9, 'k idéal', transform=ax.get_xaxis_text1_transform(0)[0])
 ax.locator_params(integer=True)
 plt.show()
 
@@ -561,7 +561,7 @@ print(model.get_params())
 model.score(test_set, predicted_labels)
 print(model)
 
-from sklearn.metrics import accuracy_score
+from sklearn. metrics import accuracy_score
 print("Accuracy : ", accuracy_score(target_labels, predicted_labels))
 
 # %% [markdown]
