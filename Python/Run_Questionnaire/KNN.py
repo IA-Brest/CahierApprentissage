@@ -236,6 +236,7 @@ def distance(metric='Euclidean', **kargs) -> float:
     else:
         pass
 
+
 # %%
 
 # Test distance()
@@ -504,7 +505,9 @@ plt.show()
 # %%
 import matplotlib.pyplot as plt
 
-k_ideal = df_clean.shape[1]/2+1
+# Le k idéal est souvant le double du nombre de cardinalité de la Target.
+# On y ajoute 1 pour avoir un nombre impair de choix et pouvoir prendre une décision.
+k_ideal = df_clean.Interpretation.nunique() * 2 + 1
 
 ax = perf_euclidean.plot(kind='line', x='k', y='Accuracy', label="Euclidean", marker='o', title="Accuracy")
 perf_manhattan.plot(kind='line', x='k', y='Accuracy', label="Manhatann", marker='o', ax=ax)
@@ -584,19 +587,45 @@ kf.get_n_splits(X)
 
 for train_index, test_index in kf.split(X):
     X_Train = X[train_index, :]
-    Y_Train = y[train_index]
+    y_Train = y[train_index]
 
     X_Test = X[test_index, :]
-    Y_Test = y[test_index]
+    y_Test = y[test_index]
 
     model = KNN(n_neighbors=3)
-    model.fit(X_Train, Y_Train)
+    model.fit(X_Train, y_Train)
     y_pred = model.predict(X_Test)
-    P = accuracy_score(Y_Test, y_pred)
+    P = accuracy_score(y_Test, y_pred)
 
     print("Performance:", P)
 
 # %%
+# Code python de Pipeline et Gridsearch Amine
+
+from sklearn.preprocessing import StandardScaler
+
+from sklearn.neighbors import KNeighborsClassifier
+from sklearn.svm import SVC
+from sklearn.ensemble import RandomForestClassifier
+
+from sklearn.pipeline import Pipeline
+
+from sklearn.model_selection import GridSearchCV
+
+pipe = Pipeline([('scaler', StandardScaler()),
+                 ('svc', SVC())])
+
+parameters = {'svc__kernel': ['linear', 'rbf'],
+              'svc__C': [1, 10]}
+
+Exp = GridSearchCV(pipe,
+                   param_grid=parameters,
+                   cv=2)
+
+X_Train = X[train_index, :]
+y_Train = y[train_index]
+
+Exp.fit(X_Train, y_Train)
 
 # %% [markdown]
 # ## Partie 3 : Mettre en place la solution dans l’application de test de personnalité
